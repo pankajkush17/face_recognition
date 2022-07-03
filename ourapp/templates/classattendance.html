@@ -1,0 +1,35 @@
+{% extends "Classroom.html" %}
+{% block classroom %}
+
+<!-- Page For Taking the Attendance -->
+
+
+<div class="container">
+ 
+    <div class="login box homescreen">
+      <h1 class="welcome">Give Attendance</h1>
+      <p>To Give attendance please capture photo!</a></p>
+      <div class="app">
+        <a href="#" id="start-camera" class="visible">Touch here to start the app.</a>
+        <div class="video_container">
+          <video id="camera-stream"></video>
+          <div class="m-2">
+            <p id="error"></p>
+          </div>
+          <div class="m-2">
+            <p id="success"></p>
+          </div>
+          <div class="controls">
+            <a href="#" id="take-photo" title="Take Photo"><i class="material-icons">camera_alt</i></a>
+          </div>
+        </div>
+        <img id="snap">
+        <p id="error-message"></p>
+        <!-- Hidden canvas element. Used for taking snapshot of video. -->
+        <canvas></canvas>
+      </div>
+  </div>
+</div>
+<script type="text/javascript" src="/static/js/selfie.js"></script>
+<script type="text/javascript" src="/static/js/attend.js"></script>
+{% endblock %}

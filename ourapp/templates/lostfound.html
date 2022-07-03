@@ -1,0 +1,48 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<!-- The lost and found portal template page -->
+
+<link rel="stylesheet" href="/static/css/lostfound.css">
+<!-- Nav tabs -->
+<div id="topheader">
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <ul class="nav navbar-nav d-flex justify-content-center">
+          <li class=""><a href="/lost">LOST</a></li>
+          <li><a href="/found">FOUND</a></li>
+        </ul>
+    </div>
+  </nav>
+</div>
+<!-- <div class="card">
+    <div class="card-header">
+      <ul class="nav nav-tabs justify-content-center" role="tablist">
+        <li class="nav-item">
+          <a id="lost" class="nav-link active" data-toggle="tab" href="/lost" role="tab">
+            LOST
+          </a>
+        </li>
+        <li class="nav-item">
+          <a id="found" class="nav-link " data-toggle="tab" href="/found" role="tab">
+            FOUND
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div> -->
+{% block lost %}{% endblock %}
+<script>
+   $(document).ready(function(){
+      $('ul li a').click(function(){
+        $('li a').removeClass("active");
+        $(this).addClass("active");
+    });
+    });
+  // $('#topheader .navbar-nav li').on('click', function () {
+  //   $('#topheader .navbar-nav').find('li.active').removeClass('active');
+  //   $(this).parent('li').addClass('active');
+  // });
+
+</script>
+{% endblock %}

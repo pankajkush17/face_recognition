@@ -1,0 +1,45 @@
+{% extends "Classroom.html" %}
+{% block classroom %}
+
+<!-- Page for calculating the class strength -->
+
+
+<div class="container">
+    <div class="my-4">
+        <h1 class="welcome">Please Upload the pic of the Classroom</h1>
+        <p>We will return you the total No of people in the class
+        </p>
+    </div>
+    <form method="POST"  class="container box" action="" enctype="multipart/form-data">
+        {{ form.hidden_tag() }}
+        <fieldset class="form-group">
+            <div class="form-group">
+                {{ form.course.label(class="form-control-label") }}
+                {% if form.course.errors %}
+                {{ form.course(class="form-control form-control-lg is-invalid") }}
+                <div class="invalid-feedback">
+                    {% for error in form.course.errors %}
+                    <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+                {% else %}
+                {{ form.course(class="form-control form-control-lg") }}
+                {% endif %}
+            </div>
+            <div class="form-group my-4">
+                <div class="my-2">{{ form.picture.label() }}</div>
+                {{ form.picture(class="form-control-file") }}
+                {% if form.picture.errors %}
+                {% for error in form.picture.errors %}
+                <span class="text-danger">{{ error }}</span></br>
+                {% endfor %}
+                {% endif %}
+            </div>
+        </fieldset>
+        <div class="form-group">
+            {{ form.submit(class="btn btn-outline-info") }}
+        </div>
+    </form>
+</div>
+
+{% endblock %}

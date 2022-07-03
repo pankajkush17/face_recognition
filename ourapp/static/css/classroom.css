@@ -1,0 +1,38 @@
+#topheader .navbar-nav li > a {
+    text-transform: capitalize;
+    color: #109CF1;
+    text-decoration: none;
+    padding: 10px 20px;
+    font-size: 1.3rem;
+    transition: background-color 0.2s, color 0.2s;
+    border-radius: 10px;
+}
+#topheader .navbar-nav li > a:hover, #topheader .navbar-nav li > a:focus {
+    background-color: #109CF1;
+    color: #fff;
+}
+#topheader .navbar-nav li.active > a {
+    background-color: #109CF1;
+    color: #fff;
+}
+#topheader .navbar-nav li > a:active{
+    background-color: #109CF1;
+    color: #fff;
+}
+.navbar-nav{
+    display: flex;
+    flex-direction: row ;
+    flex-wrap: wrap;
+    gap: 10px;
+    width: 100%;
+    justify-content: center;
+    margin: 0 auto;
+}
+#topheader{
+    margin: 30px 0;
+}
+
+
+.registercourse{
+    color: #109CF1;
+}

@@ -1,0 +1,58 @@
+{% extends "layout.html"%}
+{% block content %}
+
+<!-- Attendance Portal Info Page -->
+
+<link rel="stylesheet" href="/static/css/classroominfo.css">
+
+<div class="content">
+    <div class="textwelcome">Attendance Portal!</div>
+    <p class="para">This portal is for tracking attendance. The fundamental overview is that first, the student must register for a course using his rollno and face, and then his attendance for a class can be recorded his attendance using his face at the take attendance portal. His attendance will thereafter be shown in the check attendance site. We also have a gateway for assessing class strength that employs a very accurate face detection library to determine the number of faces in the classroom, which will assist teachers in keeping track of the number of pupils present. </p>
+    
+    </div>
+    <div class="cards">
+        <div class="box">
+            <h1 class="event">
+                Course Register
+            </h1>
+            <p class="participants">
+                 It is a student portal for Registering for the course using their face and Roll number. It contains 3 demo courses where students can register for any of the course and give attendanece for the same.
+            </p>
+            <br>
+                <a href="/courseregister"><div class="join join-btn joinbtn" >Register for a Course</div></a>
+            <br>
+        </div>
+        <div class="box">
+            <h1 class="event">
+                Take Attendance
+            </h1>
+            <p class="participants">
+                It's a teacher-side portal for tracking student attendance for a course.
+            </p>
+            <br>
+            <a href="/takeattend/A"><div class="join join-btn joinbtn" >Take Attendance</div></a>
+            <br>
+        </div>
+        <div class="box">
+            <h1 class="event">
+                Class Participation</h1>
+            <p class="participants">
+                It's a teacher-only portal that lets you see how many people are in your class by looking at a single photo of the room. It calculates the number of pupils precisely and add the strength  to the database using a highly accurate library that is more accurate than opencv.It is for tracking the students participation of a particular course and on a particular date.
+            </p>
+            <br>
+            <a href="/classanalytics"><div class="join join-btn joinbtn" >Class Participation</div></a>
+            <br>
+        </div>
+        <div class="box">
+            <h1 class="event">
+                Checking the Attendance
+            </h1>
+            <p class="participants">
+                So here teachers can check the attendance of various students on a specific day and for a specific course, and we can filter by rollno/course/day, and we can also view the number of students in a specific class and on a specific day.
+            </p>
+            <br>
+            <a href="/checkattendance"><div class="join join-btn joinbtn" >Check Your Attendance</div></a>
+            <br>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,58 @@
+{% extends "Classroom.html" %}
+{% block classroom %}
+
+<!-- Page for the registration of courses -->
+
+
+<link rel="stylesheet" href="/static/css/classroom.css">
+<div class="container my-4">
+        <!-- Login Module -->
+        <form method="POST" action="" enctype="multipart/form-data">
+            {{ form.hidden_tag() }}
+            <fieldset class="form-group">
+                <legend class="border-bottom registercourse mb-4">Register For the Course</legend>
+                <div class="form-group">
+                    {{ form.rollno.label(class="form-control-label") }}
+                    {% if form.rollno.errors %}
+                    {{ form.rollno(class="form-control form-control-lg is-invalid") }}
+                    <div class="invalid-feedback">
+                        {% for error in form.rollno.errors %}
+                        <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                    {% else %}
+                    {{ form.rollno(class="form-control form-control-lg") }}
+                    {% endif %}
+                </div>
+                <div class="form-group">
+                    {{ form.course.label(class="form-control-label") }}
+
+                    {% if form.course.errors %}
+                    {{ form.course(class="form-control form-control-lg is-invalid") }}
+                    <div class="invalid-feedback">
+                        {% for error in form.course.errors %}
+                        <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                    {% else %}
+                    {{ form.course(class="form-control form-control-lg") }}
+                    {% endif %}
+                </div>
+                <div class="form-group my-4">
+                    
+                    <div class="my-2">{{ form.picture.label() }}</div>
+                    {{ form.picture(class="form-control-file") }}
+                    {% if form.picture.errors %}
+                    {% for error in form.picture.errors %}
+                    <span class="text-danger">{{ error }}</span></br>
+                    {% endfor %}
+                    {% endif %}
+                </div>
+            </fieldset>
+            <div class="form-group">
+                {{ form.submit(class="btn btn-outline-info") }}
+            </div>
+        </form>
+
+</div>
+{% endblock %}

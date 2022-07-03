@@ -1,0 +1,304 @@
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap');
+
+
+*{
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+  
+  /* # Header, Main Menu
+  ================================ */
+
+.Logoimage{
+    width : 70px;
+}
+@media(max-width: 600px){
+    .Logoimage{
+        width : 50px;
+    }
+}
+#Logoutbutton{
+    border-radius: 12px;
+    background-color: #109CF1;
+}
+.nav-item{
+   
+    font-size: 1.2rem;
+    border-radius: 7px;
+    color: rgb(255, 255, 255);
+    text-align: center;
+  
+    font-weight: 500;
+ 
+}
+.nav-link{
+   
+    font-size: 1.2rem;
+    border-radius: 7px;
+    background-color: #fcfeff;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    font-weight: 500;
+    background: #c1c9d0;
+}
+.nav-link::after {
+   
+    content: "";
+    width: 0;
+    height: 3px;
+    left: 0;
+    bottom: 0;
+    transition: width 0.35s ease 0s;
+    position: absolute;
+  }
+  .nav-link:hover::after {
+    width: 100%;
+  }
+ 
+
+.video_container{
+  width: 250px;
+  /* height: 300px; */
+  overflow: hidden;
+  margin: auto;
+}
+
+.app{
+    width: 100%;
+    position: relative;
+}
+
+
+
+.app #start-camera{
+    display: none;
+    border-radius: 3px;
+    max-width: 400px;
+    color: #fff;
+    background-color: #448AFF;
+    text-decoration: none;
+    padding: 15px;
+    opacity: 0.8;
+    margin: 50px auto;
+    text-align: center;
+}
+
+.app video#camera-stream{
+    display: none;
+    width: 400px;
+    position: relative;
+    left: -75px;
+    transform: rotateY(180deg);
+}
+
+.app img#snap{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+    display: none;
+}
+
+.app #error-message{
+    width: 100%;
+    background-color: #ccc;
+    color: #9b9b9b;
+    font-size: 28px;
+    padding: 200px 100px;
+    text-align: center;
+    display: none;
+}
+
+.app .controls{
+    /* position: absolute; */
+    top: 0;
+    left: 0;
+    width: 250px;
+    z-index: 20;
+
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
+    padding: 30px;
+    display: none;
+}
+
+.app .controls a{
+    border-radius: 50%;
+    color: #fff;
+    background-color: #111;
+    text-decoration: none;
+    padding: 15px;
+    line-height: 0;
+    opacity: 0.7;
+    outline: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.app .controls a:hover, .app .controls a:focus{
+    opacity: 1;
+}
+
+.app .controls a.disabled{
+    background-color: #555;
+    opacity: 0.5;
+    cursor: default;
+    pointer-events: none;
+}
+
+.app .controls a.disabled:hover{
+    opacity: 0.5;
+}
+
+.app .controls a i{
+    font-size: 18px;
+}
+
+.app .controls #take-photo i{
+    font-size: 32px;
+}
+
+.app canvas{
+    display: none;
+}
+
+
+
+.app video#camera-stream.visible,
+.app img#snap.visible,
+.app #error-message.visible
+{
+    display: block;
+}
+
+.app .controls.visible{
+    display: flex;
+}
+
+
+
+@media(max-width: 1000px){
+    /* .container1{
+        margin: 40px;
+    } */
+
+    .app #start-camera.visible{
+        display: block;
+    }
+
+    .app .controls a i{
+        font-size: 16px;
+    }
+
+    .app .controls #take-photo i{
+        font-size: 24px;
+    }
+}
+
+
+@media(max-width: 600px){
+    /* .container1{
+        margin: 10px;
+    } */
+
+    .app #error-message{
+        padding: 80px 50px;
+        font-size: 18px;
+    }
+
+    .app .controls a i{
+        font-size: 12px;
+    }
+
+    .app .controls #take-photo i{
+        font-size: 18px;
+    }
+}
+
+.button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 8px;
+}
+
+input[type=text], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+#Registerbutton{
+    background-color: #109CF1;
+    border-radius: 5px;
+}
+
+#Loginbutton{
+    padding: 5px;
+    border-radius: 5px;
+    margin: auto 5px;
+}
+
+.actionbutton{
+    width: 300px;
+}
+
+#error{
+    color: red;
+}
+
+#success{
+    color: #0bcb12;
+}
+
+.box{
+    border-radius: 3px;
+    width: 100%;
+    padding: 50px 70px;
+    background-color: rgb(248, 248, 248);
+}
+@media(max-width: 800px){
+    .box{
+        border-radius: 3px;
+        /* width: 250px; */
+        padding: 20px 20px;
+        background-color: rgb(248, 248, 248);
+    }
+    .app video#camera-stream{
+        display: none;
+        width: 300px;
+        position: relative;
+        left: -75px;
+        transform: rotateY(180deg);
+    }
+
+}
+
+.box:hover{
+    border: 0px solid rgb(46, 46, 46);
+    box-shadow: 1px 1px 6px 6px rgba(16, 156, 241,0.5);;
+}
+.welcome{
+    color: #334D6E;
+    font-size: 2rem;
+}
+@media(max-width: 700px){
+    .welcome{
+        color: #334D6E;
+        font-size: 1.5rem;
+    }
+}
+

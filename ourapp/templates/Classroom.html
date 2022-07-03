@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<!-- Template Page for navbar -->
+
+<link rel="stylesheet" href="/static/css/classroom.css">
+<div id="topheader">
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <ul class="nav navbar-nav d-flex justify-content-center">
+          <li class=""><a href="/courseregister">Course Register</a></li>
+          <li><a href="/takeattend/A">Take attendance</a></li>
+          <li><a href="/classanalytics">Class Strength</a></li>
+          <li><a href="/checkattendance">Check Attendance</a></li>
+        </ul>
+    </div>
+  </nav>
+</div>
+{% block classroom %}{% endblock %}
+
+{% endblock %}

@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+{% block content %}
+<link rel="stylesheet" href="/static/css/lostfoundexp.css">
+
+
+<!-- The Lost and found portal explanation page -->
+
+
+<div class="content">
+    <div class="textwelcome">Lost and Found Portal!</div>
+    <p class="para">This is essentially a lost and found gateway for those who have gone missing. It has two portals, one for discovering lost persons and the other for finding the owners of those who have been located. If any of the ones you search for are located in our database, the result will be shown to you. Otherwise, they will be retained in our database and sent to you if anybody else finds them or attempts to look for them.We use <strong>face recognition</strong> for searching people in our database</p>
+    </div>
+    <div class="cards">
+        <div class="box">
+            <h1 class="event">
+                Lost People?
+            </h1>
+            <p class="participants">
+                Have u lost anyone? try searching in ourdatabase we will let you u know whether anybody found them or not. If the results are not displayed then dont worry ur contact number and the address will be recorded so if anybody finds whom you are looking for we will give your contact to them they will contact you :). 
+            </p>
+            <br>
+                <a href="/lost"><div class="join join-btn joinbtn" >Lost</div></a>
+            <br>
+        </div>
+        <div class="box">
+            <h1 class="event">
+                Found People?
+            </h1>
+            <p class="participants">
+                Have u found any lost people? try searching in ourdatabase  whether anybody is looking for them or not. If anybody is not looking for them now. Then dont worry ur contact number and the address will be recorded so if anybody finds whom they are looking for they will contact you .Until them keep them safely :).
+            </p>
+            <br>
+            <a href="/found"><div class="join join-btn joinbtn" >Found</div></a>
+            <br>
+        </div>
+    </div>
+{% endblock %}

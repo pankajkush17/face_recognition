@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<!-- User registration Portal -->
+
+
+<div class="container">
+  <div class="login box homescreen">
+    <h2 class="welcome">Please Register to Continue to the App</h2>
+    <p>To register, please enter your name then capture a photo of yourself</a></p>
+    <div class="app">
+      <a href="#" id="start-camera" class="visible">Touch here to start the app.</a>
+      <div class="video_container">
+        <form name="form">
+          <input type="text" name="username" placeholder="Username" autocomplete="off" />
+        </form>
+        <video id="camera-stream"></video>
+        <div class="controls">
+          <a href="#" id="delete-photo" title="Delete Photo" class="disabled"><i class="material-icons">delete</i></a>
+          <a href="#" id="take-photo" title="Take Photo"><i class="material-icons">camera_alt</i></a>
+        </div>
+      </div>
+      <img id="snap">
+      <p id="error-message"></p>
+      <canvas></canvas>
+    </div>
+    <div class="d-flex actionbutton flex-column justify-content-center mx-auto ">
+      <p id="error"></p>
+      <button class="button" id="register">Register</button>
+      <p><a tabindex="19" href="/login">Have an account? back to login page</a></p>
+    </div>
+    <script type="text/javascript" src="/static/js/selfie.js"></script>
+    <script type="text/javascript" src="/static/js/register.js"></script>
+    <!-- <p><a tabindex="19" href="https://key.harvard.edu/" target="_blank">Back to HarvardKey Home ></a></p> -->
+  </div>
+</div>
+
+{% endblock %}

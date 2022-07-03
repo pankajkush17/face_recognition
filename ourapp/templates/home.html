@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+{% block content %}
+<link rel="stylesheet" href="/static/css/home.css">
+
+
+<!-- The Home Page -->
+
+
+<div class="content">
+<div class="textwelcome">Welcome to My Face Recognition App {% if(current_user.username ) %} {{current_user.username}} {% endif %}!</div>
+<p class="para">Hi, Pankaj this side. This is a facial recognition app where you can register yourself and mark your attendence successfully via face recognition technology. Give it a try! </p>
+</div>
+<div class="cards">
+    <div class="box">
+        <h1 class="event">
+            Face Security
+        </h1>
+        <p class="participants">
+            I've demonstrated application of face recognition technology to login and register. 
+        </p>
+        <br> 
+            <a href="/login"><div class="join join-btn joinbtn" >Login</div></a>
+        <br>
+    </div>
+    <div class="box">
+        <h1 class="event">
+            Class Attendance
+        </h1>
+        <p class="participants">
+            I've demonstrated the face recognition technology in tracking attendance 
+        </p>
+        <br>
+        <a href="/classattendance"><div class="join join-btn joinbtn" >Class Attendance</div></a>
+        <br>
+    </div>
+    
+</div>
+{% endblock %}

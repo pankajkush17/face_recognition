@@ -1,0 +1,89 @@
+{% extends "lostfound.html" %}
+{% block lost %}
+
+<!-- The Lost portal -->
+<link rel="stylesheet" type="text/css" href="/static/css/lost.css">
+<div class="container">
+    {% if (yayfound)%}
+    <h2 class="Text">Here are the Matches:</h2>
+    <div class="box">
+        <img class="rounded" src="{{image_file}}">
+        <div class="details">
+            <div class="detials"><span class="event">Name of the person:</span>{{ yayfound.NameofPerson }}</div>
+            <div class="detials"><span class="event">Address to visit:</span>{{ yayfound.AdresstoVisit }}</div>
+            <div class="detials"><span class="event">Contact Number to contact:</span>{{ yayfound.ContactPerson }}</div>
+        </div>
+    </div>
+    {% endif %}
+
+    <div class="container">
+        <form method="POST" class="boxM mx-auto" action="" enctype="multipart/form-data">
+            {{ form.hidden_tag() }}
+            <fieldset class="form-group">
+                <legend class="mb-4">Lost Anyone? Fill in the form</legend>
+                <div class="form-group">
+                    {{ form.NameofPerson.label(class="form-control-label") }}
+
+                    {% if form.NameofPerson.errors %}
+                    {{ form.NameofPerson(class="form-control form-control-lg is-invalid") }}
+                    <div class="invalid-feedback">
+                        {% for error in form.NameofPerson.errors %}
+                        <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                    {% else %}
+                    {{ form.NameofPerson(class="form-control form-control-lg forminput") }}
+                    {% endif %}
+                </div>
+                <div class="form-group">
+                    {{ form.AddresstoVisit.label(class="form-control-label") }}
+
+                    {% if form.AddresstoVisit.errors %}
+                    {{ form.AddresstoVisit(class="form-control form-control-lg is-invalid") }}
+                    <div class="invalid-feedback">
+                        {% for error in form.AddresstoVisit.errors %}
+                        <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                    {% else %}
+                    {{ form.AddresstoVisit(class="form-control form-control-lg forminput") }}
+                    {% endif %}
+                </div>
+                <div class="form-group">
+                    {{ form.ContactPerson.label(class="form-control-label") }}
+                    {% if form.ContactPerson.errors %}
+                    {{ form.ContactPerson(class="form-control form-control-lg is-invalid") }}
+                    <div class="invalid-feedback">
+                        {% for error in form.ContactPerson.errors %}
+                        <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                    {% else %}
+                    {{ form.ContactPerson(class="form-control form-control-lg forminput") }}
+                    {% endif %}
+                </div>
+                <div class="form-group">
+                    {{ form.picture.label() }}
+                    <div class="my-2">
+                        {{ form.picture(class="form-control-file") }}
+                        {% if form.picture.errors %}
+                        {% for error in form.picture.errors %}
+                        <span class="text-danger">{{ error }}</span></br>
+                        {% endfor %}
+                        {% endif %}
+                    </div>
+                </div>
+                <div class="form-group my-4 buttonfind">
+                    {{ form.submit(class="btn btn-outline-info", id = "submit") }}
+                </div>
+            </fieldset>
+            
+        </form>
+    </div>
+
+</div>
+
+
+
+
+{% endblock %}

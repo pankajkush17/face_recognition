@@ -1,0 +1,98 @@
+{% extends "Classroom.html" %}
+{% block classroom %}
+<link rel="stylesheet" href="/static/css/classattendance.css">
+
+<!-- Page For Checking the Attendance -->
+
+<div class="container m-2">
+
+
+    <div class="tabs">
+        <div class="tab-2">
+            <label for="tab2-1">Class Attendance</label>
+            <input id="tab2-1" name="tabs-two" type="radio" checked="checked">
+            <div>
+                <div class="m-4"><b class="">Search the table for Date,Course, CourseCode:
+                    <input id="gfg" type="text" placeholder="Search here">
+                </b></div>
+            <div class="table-responsive">
+                <table class="table container">
+                    <thead>
+                        <tr>
+                            <th scope="col">Date</th>
+                            <th scope="col">Course</th>
+                            <th scope="col">Strength</th>
+                        </tr>
+                    </thead>
+                    <tbody id="geeks">
+                        {% for pos in classattendance %}
+                        <tr>
+                            <td>{{ pos.Date }}</td>
+                            <td>{{ pos.CourseCode }}</td>
+                            <td>{{ pos.Strength }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+
+                
+                </div>
+            </div>
+        </div>
+        <div class="tab-2">
+            <label for="tab2-2">Student Attendance</label>
+            <input id="tab2-2" name="tabs-two" type="radio">
+            <div>
+                <div class="m-4"><b class="">Search the table for Date,Course, Strength:
+                    <input id="inp" type="text" placeholder="Search here">
+                </b>
+            </div>
+            <div class="table-responsive-md">
+                <table class="table table-responsive container">
+                    <thead>
+                        <tr>
+                            <th scope="col">Date</th>
+                            <th scope="col">RollNo</th>
+                            <th scope="col">CourseCode</th>
+                        </tr>
+                    </thead>
+                    <tbody id="attend">
+                        {% for pos in attendance %}
+                        <tr>
+                            <td>{{ pos.Date }}</td>
+                            <td>{{ pos.RollNo }}</td>
+                            <td>{{ pos.CourseCode }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+                
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <script>
+        $(document).ready(function () {
+            $("#inp").on("keyup", function () {
+                var value = $(this).val().toLowerCase();
+                $("#attend tr").filter(function () {
+                    $(this).toggle($(this).text()
+                        .toLowerCase().indexOf(value) > -1)
+                });
+            });
+        });
+
+        $(document).ready(function () {
+            $("#gfg").on("keyup", function () {
+                var value = $(this).val().toLowerCase();
+                $("#geeks tr").filter(function () {
+                    $(this).toggle($(this).text()
+                        .toLowerCase().indexOf(value) > -1)
+                });
+            });
+        });
+    </script>
+
+    {% endblock %}
