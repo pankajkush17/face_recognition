@@ -1,5 +1,5 @@
 # face_recognition
-I've Created a face recognition based Attendance app using python which helps user to mark their attendance using face recognition technology.
+I've Created a face recognition based Attendance app using python which helps user to mark their attendance using face recognition technology. The user first needs to register himself for login purpose. The the user has to select a course. Now the user can easily mark his attendance under mark attendance section. The user can also check their attendance afterwards. 
   
 Steps to use this app in your PC:
 ## How to use
